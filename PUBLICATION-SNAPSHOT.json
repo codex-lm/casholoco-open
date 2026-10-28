@@ -49,11 +49,12 @@
     "isometric/library.glb": "7e41dc8511792cc1e29e8f0bf19febdfd990f3a72364c42b49a2714f192818d9",
     "isometric/manifest.json": "f1ce17d4a75fcfdb1988354a6a439bd1384b4e7ae9d1d687e87dd536b62895b0",
     "LICENSE": "4623333ee8b164acd1218fc7fc5bf95eec1300d61b17b8b6ed2115c704f62888",
-    "LOB7-ATTRIBUTION.json": "064462cfec4372e7a15b119e28f49479a2e5fd3a722d4b6709e45786c9ece7cd",
+    "LOB7-ATTRIBUTION.json": "2891f4d6d3abf6317e38451e268b94287f2b5f1625f6fa47f9a28a119f2d35ef",
     "LOB7-GAME.json": "b98fc1c95d1e54ab3432b3a1e0ccb7d4075ba06685e862416ef02feef2538b83",
     "og-casholoco.png": "3d3af6d52d5c121a377d8f0e0388357bdea7ce1d690fde763dfa0ccaeca5eb9d",
     "og-image.png": "cce9ae579c82baafae8b98001d71744f0157ae24cd5413700c7b391ba0422df1",
-    "README.md": "37ef4075a1c4663806bd158a5576e2f233fd832c9237b21489843fb4fa48feac",
+    "README.md": "3e3ec3c123bf470350795ee8dfe7f70d0921eeb995a3865e01c4c70068ecf4b7",
     "THIRD_PARTY_NOTICES.md": "3eacf90dc394444ed9aad80a4e0086f19a73d708769aa0063c2fbe3b39ddf6ea"
-  }
+  },
+  "basedOnReleaseId": "br_s_9d210dc2-b120-4930-862c-530849f2ba67"
 }

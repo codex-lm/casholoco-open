@@ -14,5 +14,7 @@
       "status": "included"
     }
   ],
-  "basedOnReleaseIds": []
+  "basedOnReleaseIds": [
+    "br_s_9d210dc2-b120-4930-862c-530849f2ba67"
+  ]
 }

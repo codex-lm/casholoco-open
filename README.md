@@ -9,3 +9,5 @@ Experimental direct multiplayer. Exchange the offer and answer codes manually us
 See LICENSE, ASSETS-LICENSE.md and THIRD_PARTY_NOTICES.md.
 
 Built from source commit [`6f17d728aba41fe861eaf14185cad78469555cec`](https://github.com/codex-lm/casholoco-open/tree/6f17d728aba41fe861eaf14185cad78469555cec).
+
+This is an independent evolution of [Casholoco Solo on LOB7](https://lob7.com/games/bg_s_b0c428de-946d-4846-b13d-89ddde27361e?release=br_s_9d210dc2-b120-4930-862c-530849f2ba67). The `main` branch preserves Solo; this `multiplayer` branch preserves Direct. Their Git history is linked so changes can be compared.
