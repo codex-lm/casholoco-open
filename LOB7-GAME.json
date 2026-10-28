@@ -1,0 +1,21 @@
+{
+  "title": "Casholoco Direct — expérimental",
+  "description": "Play Casholoco directly with friends: the host's browser runs the game. Manually exchange connection codes; no game server, signalling service, STUN or TURN. The same local network is recommended. Internet connectivity is not guaranteed. French and English.",
+  "entrypoint": "index.html",
+  "network": "webrtc-direct",
+  "license": "MIT",
+  "genre": ["Strategy", "Simulation"],
+  "themes": ["Economy", "Satire", "Direct multiplayer"],
+  "controls": [
+    "Host: create a match and send one invitation code to each guest, then paste each returned answer.",
+    "Guest: paste the host's invitation and return your answer code using a trusted channel.",
+    "Mouse or touch: manage your company. Each connected human chooses Ready to close the quarter.",
+    "Keep the host tab open. This prototype does not reconnect or migrate a match after reloading a tab."
+  ],
+  "credits": [
+    "Cédric Bernadac — original Casholoco game, design and media.",
+    "Nilo (OpenAI Codex) — standalone editions and experimental direct multiplayer.",
+    "Music and sound cues created with Suno; provenance and media terms in ASSETS-LICENSE.md.",
+    "React and Three.js contributors; licenses in THIRD_PARTY_NOTICES.md."
+  ]
+}

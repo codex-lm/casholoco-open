@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "generator": "tools/isometric/build_library.py",
+  "blenderVersion": "4.5.13 LTS",
+  "coordinateSystem": "glTF: +Y up, +Z forward, pivot at ground centre",
+  "parcelSize": 1,
+  "recolorMaterial": "company_accent",
+  "textures": 0,
+  "assetCount": 20,
+  "totalTriangles": 47222,
+  "materialGroups": 76,
+  "glbBytes": 4056188,
+  "glbSha256": "7e41dc8511792cc1e29e8f0bf19febdfd990f3a72364c42b49a2714f192818d9",
+  "assets": [
+    {
+      "node": "asset_factory_energy_drinks",
+      "bounds": {
+        "min": [
+          -0.37,
+          0.0,
+          -0.33
+        ],
+        "max": [
+          0.37,
+          0.4725,
+          0.33
+        ]
+      },
+      "triangles": 4632,
+      "vertices": 2502,
+      "materials": [
+        "miniature_palette_matte",
+        "company_accent",
+        "miniature_palette_metal",
+        "miniature_palette_glass",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_factory_gadgets",
+      "bounds": {
+        "min": [
+          -0.37,
+          0.0,
+          -0.33
+        ],
+        "max": [
+          0.37,
+          0.3185,
+          0.33
+        ]
+      },
+      "triangles": 4336,
+      "vertices": 2336,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_glass",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_factory_scooters",
+      "bounds": {
+        "min": [
+          -0.37,
+          0.0,
+          -0.33
+        ],
+        "max": [
+          0.37,
+          0.43,
+          0.33
+        ]
+      },
+      "triangles": 3824,
+      "vertices": 2122,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass",
+        "company_accent",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_factory_yogurts",
+      "bounds": {
+        "min": [
+          -0.37,
+          0.0,
+          -0.33
+        ],
+        "max": [
+          0.37,
+          0.362,
+          0.33
+        ]
+      },
+      "triangles": 4480,
+      "vertices": 2422,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass",
+        "company_accent",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_factory_crypto",
+      "bounds": {
+        "min": [
+          -0.37,
+          0.0,
+          -0.33
+        ],
+        "max": [
+          0.37,
+          0.4,
+          0.33
+        ]
+      },
+      "triangles": 3120,
+      "vertices": 1688,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass",
+        "miniature_palette_glow",
+        "company_accent"
+      ]
+    },
+    {
+      "node": "asset_site_oil",
+      "bounds": {
+        "min": [
+          -0.34,
+          0.0,
+          -0.31
+        ],
+        "max": [
+          0.34,
+          0.39247,
+          0.31
+        ]
+      },
+      "triangles": 2444,
+      "vertices": 1310,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_site_lithium",
+      "bounds": {
+        "min": [
+          -0.34,
+          0.0,
+          -0.31
+        ],
+        "max": [
+          0.34,
+          0.3095,
+          0.31
+        ]
+      },
+      "triangles": 1744,
+      "vertices": 932,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glass",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_site_sugar",
+      "bounds": {
+        "min": [
+          -0.34,
+          0.0,
+          -0.31
+        ],
+        "max": [
+          0.34,
+          0.3795,
+          0.31
+        ]
+      },
+      "triangles": 3996,
+      "vertices": 2182,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glass"
+      ]
+    },
+    {
+      "node": "asset_site_chips",
+      "bounds": {
+        "min": [
+          -0.34,
+          0.0,
+          -0.31
+        ],
+        "max": [
+          0.34,
+          0.3595,
+          0.31
+        ]
+      },
+      "triangles": 3336,
+      "vertices": 1808,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_glass",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_extension_warehouse",
+      "bounds": {
+        "min": [
+          -0.12,
+          0.0,
+          -0.22
+        ],
+        "max": [
+          0.12,
+          0.257,
+          0.2535
+        ]
+      },
+      "triangles": 1316,
+      "vertices": 726,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass"
+      ]
+    },
+    {
+      "node": "asset_extension_tanks",
+      "bounds": {
+        "min": [
+          -0.097,
+          0.006,
+          -0.047
+        ],
+        "max": [
+          0.12,
+          0.2605,
+          0.056
+        ]
+      },
+      "triangles": 1020,
+      "vertices": 544,
+      "materials": [
+        "miniature_palette_metal"
+      ]
+    },
+    {
+      "node": "asset_construction",
+      "bounds": {
+        "min": [
+          -0.315,
+          0.0,
+          -0.27
+        ],
+        "max": [
+          0.315,
+          0.429,
+          0.27
+        ]
+      },
+      "triangles": 3892,
+      "vertices": 2032,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent"
+      ]
+    },
+    {
+      "node": "asset_truck",
+      "bounds": {
+        "min": [
+          -0.05342,
+          0.005,
+          -0.103
+        ],
+        "max": [
+          0.05342,
+          0.123,
+          0.112
+        ]
+      },
+      "triangles": 1608,
+      "vertices": 848,
+      "materials": [
+        "miniature_palette_metal",
+        "miniature_palette_matte",
+        "company_accent",
+        "miniature_palette_glass",
+        "miniature_palette_glow"
+      ]
+    },
+    {
+      "node": "asset_person",
+      "bounds": {
+        "min": [
+          -0.0205,
+          0.0005,
+          -0.014
+        ],
+        "max": [
+          0.02048,
+          0.0875,
+          0.014
+        ]
+      },
+      "triangles": 800,
+      "vertices": 418,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent"
+      ]
+    },
+    {
+      "node": "asset_boat",
+      "bounds": {
+        "min": [
+          -0.063,
+          0.005,
+          -0.153
+        ],
+        "max": [
+          0.063,
+          0.18,
+          0.17
+        ]
+      },
+      "triangles": 1124,
+      "vertices": 610,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_glass",
+        "company_accent",
+        "miniature_palette_metal"
+      ]
+    },
+    {
+      "node": "asset_tree",
+      "bounds": {
+        "min": [
+          -0.08921,
+          0.0,
+          -0.063
+        ],
+        "max": [
+          0.08301,
+          0.2491,
+          0.079
+        ]
+      },
+      "triangles": 268,
+      "vertices": 142,
+      "materials": [
+        "miniature_palette_matte"
+      ]
+    },
+    {
+      "node": "asset_tree_pine",
+      "bounds": {
+        "min": [
+          -0.065,
+          0.0,
+          -0.065
+        ],
+        "max": [
+          0.065,
+          0.255,
+          0.065
+        ]
+      },
+      "triangles": 70,
+      "vertices": 43,
+      "materials": [
+        "miniature_palette_matte"
+      ]
+    },
+    {
+      "node": "asset_house",
+      "bounds": {
+        "min": [
+          -0.08096,
+          0.0,
+          -0.0725
+        ],
+        "max": [
+          0.08096,
+          0.221,
+          0.1075
+        ]
+      },
+      "triangles": 1132,
+      "vertices": 614,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "company_accent",
+        "miniature_palette_glow",
+        "miniature_palette_glass"
+      ]
+    },
+    {
+      "node": "asset_port",
+      "bounds": {
+        "min": [
+          -0.345,
+          -0.035,
+          -0.24
+        ],
+        "max": [
+          0.345,
+          0.43858,
+          0.29798
+        ]
+      },
+      "triangles": 2592,
+      "vertices": 1422,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass",
+        "company_accent"
+      ]
+    },
+    {
+      "node": "asset_civic",
+      "bounds": {
+        "min": [
+          -0.19,
+          0.0,
+          -0.16
+        ],
+        "max": [
+          0.19,
+          0.31,
+          0.18
+        ]
+      },
+      "triangles": 1488,
+      "vertices": 814,
+      "materials": [
+        "miniature_palette_matte",
+        "miniature_palette_metal",
+        "miniature_palette_glass"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "contributions": [
+    {
+      "name": "Cédric Bernadac",
+      "kind": "person",
+      "summary": "Original Casholoco game, design and media.",
+      "status": "included"
+    },
+    {
+      "name": "Nilo (OpenAI Codex)",
+      "kind": "agent",
+      "summary": "An experimental direct multiplayer edition with browser-hosted simulation and manually exchanged WebRTC connection codes, without signalling, STUN or TURN services.",
+      "status": "included"
+    }
+  ],
+  "basedOnReleaseIds": []
+}
