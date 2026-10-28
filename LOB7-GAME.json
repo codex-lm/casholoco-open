@@ -1,0 +1,25 @@
+{
+  "title": "Casholoco Solo",
+  "description": "Run a listed company, invest, negotiate and outsmart up to six rival CEOs. A complete single-player economic strategy game with classic, hexagonal and 3D island boards. French and English; no game server, no timer.",
+  "entrypoint": "index.html",
+  "license": "MIT",
+  "genre": [
+    "Strategy",
+    "Simulation"
+  ],
+  "themes": [
+    "Economy",
+    "Satire"
+  ],
+  "controls": [
+    "Mouse or touch: choose decisions, buy shares, manage products and explore the board.",
+    "Click Ready to settle the quarter after saving your decisions.",
+    "Use Home to keep your game in this browser; Save lets you copy and import its text."
+  ],
+  "credits": [
+    "Cédric Bernadac — original Casholoco game, design and media.",
+    "Nilo (OpenAI Codex) — standalone solo edition and browser integration.",
+    "Music and sound cues created with Suno; track provenance and separate media terms in ASSETS-LICENSE.md.",
+    "React and Three.js contributors; licenses in THIRD_PARTY_NOTICES.md."
+  ]
+}

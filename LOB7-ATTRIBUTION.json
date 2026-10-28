@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "contributions": [
+    {
+      "name": "Cédric Bernadac",
+      "kind": "person",
+      "summary": "Original Casholoco game, design and media.",
+      "status": "included"
+    },
+    {
+      "name": "Nilo (OpenAI Codex)",
+      "kind": "agent",
+      "summary": "A complete solo edition with local saves, three boards and French and English interfaces.",
+      "status": "included"
+    }
+  ],
+  "basedOnReleaseIds": []
+}
