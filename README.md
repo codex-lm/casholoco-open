@@ -2,6 +2,16 @@
 
 ## Français
 
+### Jouer sur LOB7
+
+- [Casholoco Solo](https://lob7.com/player/br_s_9d210dc2-b120-4930-862c-530849f2ba67)
+- [Casholoco Direct — expérimental](https://lob7.com/player/br_s_b36e9acc-ca73-4812-ad50-67b00dc2babf)
+
+Les deux éditions sont publiées dans la même famille LOB7. Direct est une variante
+issue du Solo ; le Solo reste disponible indépendamment. Sur GitHub, `main`
+conserve l'export Solo, `multiplayer` l'export Direct et `source` leurs sources
+modifiables. L'historique public commence avec ces éditions autonomes.
+
 Une édition autonome de Casholoco : dirigez une entreprise cotée, produisez,
 investissez et affrontez un à six PDG contrôlés par le jeu. Le moteur et les
 règles économiques sont ceux de Casholoco. Les trimestres avancent à votre rythme.
@@ -65,11 +75,20 @@ contiennent les métadonnées réseau de la connexion et ne doivent pas être pu
 `packages/client/dist-peer/` contient le build et `dist-peer/` l’export autonome.
 Le manifeste `LOB7-GAME.peer.json` est distinct de celui du solo. Le build solo
 est vérifié pour ne contenir aucun `RTCPeerConnection` ni protocole Direct.
-Une réussite du validateur statique ne prouve pas que cette connexion est admise
-par LOB7 : les permissions réseau et le contrat de publication doivent être
-confirmés indépendamment avant d’y publier cette édition expérimentale.
+Le manifeste déclare le mode LOB7 `webrtc-direct`. Cette édition a été publiée
+avec ce mode le 28 octobre 2026. Un test sur un seul ordinateur avec l'export
+hébergé a confirmé l'invitation, la connexion et le passage synchronisé au
+trimestre 2, avec l'hôte dans le lecteur LOB7. Cela ne valide pas une connexion
+entre deux appareils ou deux réseaux Internet. Le test local a aussi couvert
+une partie complète de huit trimestres entre deux fenêtres.
 
 ## English
+
+Both [Solo](https://lob7.com/player/br_s_9d210dc2-b120-4930-862c-530849f2ba67)
+and [Direct experimental](https://lob7.com/player/br_s_b36e9acc-ca73-4812-ad50-67b00dc2babf)
+are published on LOB7. Direct derives from Solo, which remains independently
+available. GitHub branches `main` and `multiplayer` contain their respective
+compiled exports; `source` contains the editable sources for both.
 
 A standalone Casholoco edition. Run a listed company, produce, invest and face
 one to six computer-controlled CEOs. It preserves Casholoco’s economic engine
@@ -93,6 +112,9 @@ is recommended; Internet connectivity is not guaranteed. Codes contain connectio
 metadata and should not be published. Keep the host tab open: this prototype does
 not reconnect, restore the multiplayer match or migrate the host after a reload.
 
-The solo bundle is checked to exclude the Direct transport. A successful static
-check of the experimental build does not establish LOB7 admission or network
-permission; those require a separate check before publication.
+The solo bundle is checked to exclude the Direct transport. Direct was published
+with LOB7's declared `webrtc-direct` mode on October 28, 2026. Hosted connection
+and synchronized quarter advancement were checked on one computer, with the host
+inside the LOB7 player. This does not establish connectivity between two devices
+or Internet networks. A complete eight-quarter game was also checked locally
+between two windows.
