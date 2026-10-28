@@ -1,0 +1,12 @@
+.decision-summary { border: 1px solid var(--hair); border-left: 3px solid var(--accent, #376f91); border-radius: 6px; padding: 10px; margin-bottom: 10px; background: var(--paper, #faf6ec); }
+.decision-summary dl { margin: 0; display: grid; gap: 5px; }
+.decision-summary dl > div { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.decision-summary dt { min-width: 0; font-size: .8rem; color: var(--muted); overflow-wrap: anywhere; }
+.decision-summary dd { min-width: 0; margin: 0; font-size: .85rem; font-weight: 600; text-align: right; overflow-wrap: anywhere; }
+.decision-summary .decision-timing { display: block; }
+.decision-summary .decision-timing dd { text-align: left; font-weight: 400; }
+.decision-summary p { margin: 7px 0 0; }
+.decision-summary .row { margin-top: 8px; }
+.decision-losses { font-size: .85rem; margin: 8px 0; }
+.decision-losses p { margin: 0 0 4px; }
+.decision-losses ul { margin: 0; padding-left: 18px; }

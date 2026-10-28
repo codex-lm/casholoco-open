@@ -1,0 +1,28 @@
+.hx-bid-picker { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, 340px); gap: 16px; align-items: start; }
+.hx-bid-picker > * { min-width: 0; }
+.hx-bid-sheet { padding: 16px; border: 1px solid var(--hair); background: var(--paper-2); }
+.hx-bid-sheet h4 { margin: 0 0 12px; font-family: var(--display); font-size: 24px; }
+.hx-bid-numbers { margin: 0 0 12px; }
+.hx-bid-numbers > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--hair); }
+.hx-bid-numbers dt { color: var(--ink-2); font-size: 12px; }
+.hx-bid-numbers dd { margin: 0; text-align: right; font-weight: 600; font-size: 13px; }
+.hx-bid-sheet .amount-row { flex-wrap: wrap; }
+.hx-bid-sheet .amount-row > .grow { flex-basis: 100%; }
+.hx-bid-fieldset { padding: 12px 0 0; border: 0; margin: 12px 0; }
+.hx-fallback { border: 0; padding: 0; margin: 12px 0; }
+.hx-fallback legend { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.hx-fallback label { display: block; font-size: 12px; margin: 6px 0; }
+.hx-bid-rules { margin: 12px 0; }
+.hx-bid-rules > summary { cursor: pointer; font-size: 12px; font-weight: 700; color: var(--ink-2); }
+/* A late payback in a sector button: said in words, and readable on the selected (ink) button too. */
+.hx-sector-late { font-weight: 700; }
+.seg-btn.active .hx-sector-late { color: var(--down-bg); text-decoration: underline; }
+.hx-projects, .hx-pending { padding: 12px; margin-bottom: 12px; background: var(--card); border: 1px solid var(--hair); }
+.hx-projects h4 { margin: 0 0 8px; }
+.hx-projects .row + .row { margin-top: 8px; }
+.hx-launch > .field { margin: 12px 0; }
+.hx-launch > .field > input { width: 100%; margin: 6px 0 8px; }
+.hx-verdict { grid-column: 1 / -1; margin: 0; padding: 8px 12px; border-left: 4px solid var(--muted); background: var(--paper-2); font-size: 13px; line-height: 1.4; }
+.hx-verdict-ok { border-left-color: var(--up); background: var(--up-bg); }
+.hx-verdict-risky { border-left-color: var(--warn); }
+.hx-verdict-late { border-left-color: var(--down); background: var(--down-bg); }

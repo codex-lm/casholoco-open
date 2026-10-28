@@ -1,0 +1,58 @@
+.chart-values {
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+}
+.chart-values > summary {
+  width: fit-content;
+  padding: 5px 0;
+  color: var(--muted);
+  cursor: pointer;
+}
+.chart-values > summary:hover {
+  color: var(--ink);
+}
+.chart-values > summary:focus-visible,
+.chart-navigation input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.chart-values[open] {
+  border-top: 1px solid var(--hair);
+}
+.chart-navigation {
+  display: grid;
+  gap: 4px;
+  padding: 6px 2px;
+}
+.chart-navigation label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.chart-navigation input[type='range'] {
+  width: 100%;
+  min-width: 0;
+  min-height: 28px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+.chart-navigation p {
+  font-size: 0.7rem;
+}
+.chart-values-scroll {
+  max-height: 240px;
+  overflow: auto;
+}
+.chart-values-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--card);
+}
+.chart-values-table .chart-value-current {
+  background: var(--paper-2);
+}

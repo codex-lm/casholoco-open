@@ -1,0 +1,39 @@
+.topbar-decision-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pending-decisions {
+  position: relative;
+  font-family: var(--sans);
+}
+/* Fixé sous la barre du jeu, collé à droite de la fenêtre : il ne déborde jamais, quelle que soit la largeur. */
+.pending-decisions-panel {
+  position: fixed;
+  top: calc(var(--topbar-h, 100px) + 6px);
+  right: 16px;
+  z-index: 70;
+  width: min(520px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--topbar-h, 100px) - 24px);
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 14px;
+  text-align: left;
+}
+.pending-decisions-content h3 { margin: 0 0 8px; font-size: 1rem; }
+.pending-decisions-content h4 { margin: 0 0 6px; font-size: 0.9rem; }
+.pending-decisions-content p { margin: 6px 0; }
+.pending-company, .pending-paid { margin-top: 12px; }
+.pending-paid { border-top: 1px solid var(--ink); padding-top: 12px; }
+.pending-decision { margin-top: 8px; }
+.pending-total { font-variant-numeric: tabular-nums; }
+.pending-decision .hx-bid-facts { margin: 6px 0; }
+.pending-decisions-panel:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.pending-saved { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--hair); }
+.pending-saved summary { cursor: pointer; font-weight: 600; }
+.pending-saved-product { padding-top: 10px; }
+.pending-saved-product dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 8px 0; font-size: .82rem; }
+.pending-saved-product dt { color: var(--muted); }
+.pending-saved-product dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }

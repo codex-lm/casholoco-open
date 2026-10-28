@@ -1,0 +1,8 @@
+/* The still miniature of a product's scene (left column of the hex board). At 0.7-0.95 px per unit its texts would be
+   smudges: the price tag, the billboards' names, « Fermé » and the building-site sign are hidden; the shapes, the
+   crate pile, the walkers and the red « ! » stay, with their hover tips. When it shows: see hexSide.css. */
+.side-plant-scene .plot-scene { border-top: 0; border-bottom: 1px solid var(--hair); }
+.plot-scene-mini .scene-price,
+.plot-scene-mini .scene-ad,
+.plot-scene-mini .scene-sign,
+.plot-scene-mini .scene-closed { display: none; }

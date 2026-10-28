@@ -1,0 +1,79 @@
+/* The hex board's left column (≥ 1200 px, HexSidePanel). 13 px text, 6 px between blocks: with one product it
+   measures about 435 px at 400 px wide without the picture (estimates: header 18, « Mes usines » and its card 150,
+   launch 70, folds 82, foot 91, gaps 24), each other product about 48 more; the picture adds about 150 (card width
+   × 0.38, border, gap).
+   The column is as high as the board's frame (the window height minus about 160 px: 530 / 580 / 780 px at 1280 × 690,
+   1536 × 740, 1920 × 940). The picture is its elastic part: HexSidePanel measures the column without it (folds
+   closed, no flow figures) and shows it only where it still fits (class hx-side-picture-room), from 300 px of column
+   width; otherwise the column scrolls under its pinned foot. */
+.hx-side { container: side / inline-size; display: flex; flex-direction: column; gap: 6px; padding-bottom: 4px; font-family: var(--sans); font-size: 13px; line-height: 1.4; }
+.hx-side > * { margin: 0; }
+.hx-side p { margin: 0; }
+.hx-side-committed { color: var(--ink-2); }
+/* With several companies, it sits in the acting company's (dark) chip, after its cash. */
+.chip.active .hx-side-committed { color: inherit; }
+.hx-side-warn { font-size: 12px; }
+
+/* « Mes usines »: one list in the company's order, the tracked product expanded in place. */
+.hx-side-plants { display: flex; flex-direction: column; gap: 4px; }
+.hx-side-plants-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.hx-side-plants-head .hx-side-heading { margin: 0; }
+.hx-side-cards { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.side-card, .side-row { border: 1px solid var(--hair); background: var(--card); padding: 3px 8px; }
+.side-card-open { display: flex; flex-direction: column; gap: 4px; padding: 6px 8px; border-color: var(--ink); }
+.side-card-head { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; min-width: 0; }
+.side-card-head .plot-status { margin-left: auto; }
+.side-card-name { min-width: 0; padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: var(--ink); text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+.side-card-name[aria-pressed='false'] { font-weight: 600; }
+.side-card-name:hover, .side-card-name:focus-visible { text-decoration: underline; }
+.side-card-margin { color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.side-verdict { padding: 2px 8px; border-left: 3px solid var(--ink); background: var(--paper-2); font-size: 12px; line-height: 1.35; }
+.side-verdict.tone-up { border-left-color: var(--up); background: var(--up-bg); }
+.side-verdict.tone-warn { border-left-color: var(--warn); background: #f6ead0; }
+.side-verdict.tone-down { border-left-color: var(--down); background: var(--down-bg); }
+.side-decision-line, .side-note, .side-row-line { font-size: 12px; line-height: 1.35; }
+.side-row-line { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.side-link { padding: 0; border: 0; background: none; font: inherit; color: var(--ink); text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 2px; }
+.side-link:hover, .side-link:focus-visible { text-decoration-color: currentColor; }
+.side-link.up { color: var(--up); }
+.side-link.muted { color: var(--muted); }
+.side-card-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+.side-card-actions .btn.tiny { padding: 2px 7px; }
+/* The flow layer's figures for this product, in the card (no title: the card names the product). */
+.side-card .map-flow-detail-compact { padding: 0; border: 0; background: none; font-family: var(--sans); font-size: 12px; line-height: 1.4; }
+.side-card .map-flow-detail-compact .map-flow-numbers { margin: 4px 0; font-size: 12px; }
+.side-card .map-flow-detail-compact h4 { margin: 4px 0 2px; font-size: 12px; }
+.side-card .map-flow-detail-compact .map-flow-actions { margin-top: 4px; }
+
+/* The still picture (and its toggle) only where it fits: a column of 300 px or more, and the height measured by
+   HexSidePanel (hx-side-picture-room). */
+.side-plant-scene, .side-plant-toggle { display: none; }
+@container side (min-width: 300px) {
+  .hx-side-picture-room .side-plant-scene { display: block; }
+  .hx-side-picture-room .side-plant-toggle { display: inline; }
+}
+.side-plant-toggle { font-size: 11px; color: var(--muted); }
+
+/* Under the cards: free slots, the best cell for a new plant, launch bids, the hot tip. */
+.hx-side-launch { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }
+.hx-side-none { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+
+/* Folds: one tight list, each summary saying what is inside (the layer on, the counts). */
+.hx-side-folds { display: flex; flex-direction: column; gap: 2px; }
+.hx-side-fold-body { padding-bottom: 6px; }
+.hx-side-entries { list-style: none; margin: 0; padding: 0; }
+.hx-side-entries .map-menu-item { padding: 3px 6px; }
+
+/* The foot, pinned at the bottom of the scrolling column like a map key; on a short window it scrolls with the rest.
+   Pinned, it would cover a control reached with Tab at the bottom of the column (or a card brought into view): the
+   column keeps that much room at its bottom when it scrolls to one. */
+.hx-side-footer { position: sticky; bottom: 0; z-index: 1; display: flex; flex-direction: column; gap: 6px; padding-top: 6px; border-top: 1px solid var(--hair); background: var(--paper); }
+.hx-side-footer .hx-lens { padding-inline: 4px; }
+.map-workspace-side:has(.hx-side-footer) { scroll-padding-bottom: 120px; }
+@media (max-height: 639px) {
+  .hx-side-footer { position: static; }
+  .map-workspace-side:has(.hx-side-footer) { scroll-padding-bottom: 0; }
+}
+
+/* Room for the fold button (« ‹ », zoomed in only) at the top right of the column. */
+.map-workspace-side-foldable .hx-side > :first-child { padding-right: 34px; }

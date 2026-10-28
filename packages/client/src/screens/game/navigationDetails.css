@@ -1,0 +1,82 @@
+/* Repères et liens de détail, dans la palette du journal. */
+.factories .factories-counts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.factories-capacity-note {
+  margin-bottom: 12px;
+}
+.company-chips .ticker-chip-link {
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.company-chips .ticker-chip-link:hover {
+  background: var(--paper-2);
+}
+.company-chips .ticker-chip-link:focus-visible,
+.topbar-alert-count:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.topbar-alert-group {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 4px;
+  max-width: 100%;
+}
+.topbar-alert-count {
+  flex: none;
+  padding: 4px 9px;
+  color: var(--warn);
+  background: var(--card);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font: 700 .8rem var(--sans);
+  cursor: pointer;
+}
+.topbar-alert-count:hover {
+  background: var(--paper-2);
+}
+.company-alert-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.company-alert-action {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--hair);
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.company-alert-action:hover {
+  background: var(--paper-2);
+}
+.company-alert-action.danger {
+  border-left: 4px solid var(--down);
+}
+.company-alert-action small {
+  color: var(--muted);
+  font-family: var(--sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.quarter-close-report-back {
+  margin-bottom: 14px;
+}
+@media (max-width: 600px) {
+  .factories .factories-counts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .company-chips .ticker-chip-link {
+    min-height: 30px;
+    padding: 3px 6px;
+  }
+}

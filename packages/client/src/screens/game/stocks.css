@@ -1,0 +1,94 @@
+.stock-company-button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.stock-company-button:hover {
+  border-color: var(--hair);
+  background: var(--card);
+}
+.stock-company-button:focus-visible,
+.stock-detail-target:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.stock-company-identity {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.stock-company-arrow {
+  margin-left: auto;
+  padding-left: 8px;
+  font-size: 1.1rem;
+}
+.stock-company-name {
+  display: block;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.stock-mobile-label {
+  display: none;
+}
+.stock-detail-target {
+  scroll-margin-top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px);
+}
+.stock-table tr:focus-within {
+  background: var(--paper-2);
+}
+
+@media (max-width: 700px) {
+  .stock-table .stock-col-extra,
+  .stock-table .stock-desktop-label,
+  .stock-holding-quantity,
+  .stock-holding-value {
+    display: none;
+  }
+  .stock-mobile-label {
+    display: inline;
+  }
+  .stock-table {
+    table-layout: fixed;
+    font-size: 0.78rem;
+  }
+  .stock-table th:first-child {
+    width: 39%;
+  }
+  .stock-table th,
+  .stock-table td {
+    padding: 7px 4px;
+  }
+  .stock-table th {
+    font-size: 0.62rem;
+    white-space: normal;
+  }
+  .stock-company-button {
+    padding: 2px;
+  }
+  .stock-company-name {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+  .stock-company-action {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.65rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .stock-holding .small {
+    font-size: inherit;
+  }
+  .stock-company-arrow {
+    display: none;
+  }
+}

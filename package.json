@@ -1,0 +1,35 @@
+{
+  "name": "casholoco-solo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Casholoco Solo — jeu de stratégie économique contre des bots, entièrement dans le navigateur.",
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/client"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @muchomoney/client",
+    "build": "npm run build:solo",
+    "preview": "npm run preview -w @muchomoney/client",
+    "typecheck": "tsc -p packages/core && tsc -p packages/client",
+    "test": "vitest run",
+    "sim": "tsx packages/core/scripts/simulate.ts",
+    "export:lob7": "node tools/standalone/export.mjs",
+    "validate:lob7": "python tools/standalone/validate.py",
+    "build:solo": "node tools/standalone/build.mjs solo",
+    "build:peer": "node tools/standalone/build.mjs peer",
+    "export:solo": "node tools/standalone/export.mjs solo",
+    "export:peer": "node tools/standalone/export.mjs peer",
+    "validate:peer": "python tools/standalone/validate.py dist-peer --edition peer"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

@@ -1,0 +1,10 @@
+.hx-hover-readout { padding: 10px 12px; border: 1px solid var(--hair); background: var(--paper-2); color: var(--ink); font-family: var(--sans); font-size: 12px; line-height: 1.35; }
+.hx-hover-place { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin-bottom: 7px; }
+.hx-hover-place > span { color: var(--muted); font-size: 11px; }
+.hx-hover-place > strong { font-size: 12px; overflow-wrap: anywhere; }
+.hx-hover-numbers { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; margin: 0; }
+.hx-hover-numbers dt, .hx-hover-numbers dd { margin: 0; }
+.hx-hover-numbers dt { color: var(--ink-2); }
+.hx-hover-numbers dd { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hx-hover-readout .hx-hover-basis { margin: 7px 0 0; color: var(--muted); font-size: 11px; }
+.hx-hover-readout-empty > p { margin: 0; color: var(--muted); }

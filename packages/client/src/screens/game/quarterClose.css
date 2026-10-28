@@ -1,0 +1,38 @@
+.quarter-close { font-size: .86rem; }
+.quarter-close section + section { border-top: 3px double var(--hair); margin-top: 16px; padding-top: 12px; }
+.quarter-close h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.quarter-close h3 { margin: 0; font-size: .95rem; }
+.quarter-close-numbers { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 8px 0; }
+.quarter-close-numbers dt { color: var(--muted); font-size: .75rem; }
+.quarter-close-numbers dd { margin: 2px 0 0; font-size: 1.15rem; font-weight: 700; }
+.quarter-close-balances, .quarter-close-breakdown { margin: 10px 0; }
+.quarter-close-balances > div, .quarter-close-breakdown > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding-block: 2px; }
+.quarter-close dd { margin: 0; font-variant-numeric: tabular-nums; }
+.quarter-close-total { border-top: 1px solid var(--hair); font-weight: 700; }
+.quarter-close small { display: block; font-size: .75rem; color: var(--muted); }
+.quarter-close-breakdown { border-top: 1px dotted var(--hair); padding-top: 8px; }
+.quarter-close-company + .quarter-close-company { border-top: 1px solid var(--hair); margin-top: 12px; padding-top: 10px; }
+.quarter-close-company-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.quarter-close-lines { display: grid; gap: 6px; list-style: none; padding: 0; margin: 8px 0; }
+.quarter-close-lines li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 10px; }
+.quarter-close-lines li > span { flex: 1 1 250px; overflow-wrap: anywhere; }
+.quarter-close-lines .btn { flex: none; }
+.quarter-close-fine { border-left: 3px solid var(--down); background: var(--down-bg); padding: 7px 9px; }
+.quarter-close-fine strong { color: var(--down); }
+.quarter-close-table-wrap { overflow-x: auto; }
+.quarter-close-products { width: 100%; border-collapse: collapse; font-size: .76rem; }
+.quarter-close-products th, .quarter-close-products td { padding: 5px 6px; border-bottom: 1px solid var(--hair); text-align: right; font-variant-numeric: tabular-nums; }
+.quarter-close-products thead th { color: var(--muted); font-weight: 500; }
+.quarter-close-products th:first-child { text-align: left; min-width: 110px; }
+.quarter-close-products td { white-space: nowrap; }
+.quarter-close-product-link { border: 0; padding: 0; background: none; color: inherit; font: inherit; text-align: left; text-decoration: underline; cursor: pointer; }
+.quarter-close-profit { margin: 6px 0; }
+.quarter-close-bids h3 { margin-bottom: 4px; }
+.quarter-close-bid-note { flex-basis: 100%; }
+.quarter-close-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 1px solid var(--hair); padding-top: 10px; margin-top: 14px; }
+.quarter-close-footer label { cursor: pointer; font-size: .78rem; }
+@media (max-width: 600px) {
+  .quarter-close-balances > div { grid-template-columns: 1fr; }
+  .quarter-close-balances dd { padding-bottom: 4px; }
+  .quarter-close-products { min-width: 620px; }
+}

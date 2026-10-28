@@ -1,0 +1,22 @@
+.hx-bid-list { display: grid; gap: 10px; }
+.hx-bid { padding: 12px; border: 1px solid var(--hair); background: var(--card); }
+.hx-bid p { margin: 6px 0; }
+.hx-bid-facts { margin: 8px 0; display: grid; gap: 5px; }
+.hx-bid-facts > div { display: flex; justify-content: space-between; gap: 14px; }
+.hx-bid-facts dd { margin: 0; text-align: right; }
+.hx-commitment { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-block: 1px solid var(--hair); }
+.hx-map-row { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 20px; align-items: start; }
+.hx-map-side { position: sticky; top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px); }
+/* Formulaire en ligne du panneau : amené sous les yeux à l'arrivée d'une intention, barre haute décomptée. */
+.hx-map-form { scroll-margin-top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px); margin-top: 12px; border-top: 1px solid var(--hair); padding-top: 12px; }
+.hx-map-form:focus { outline: none; }
+@media (max-width: 959px) {
+  .hx-map-row { grid-template-columns: minmax(0, 1fr); }
+  .hx-map-side { position: static; min-width: 0; }
+}
+@media (max-width: 540px) {
+  .hx-reference { flex-wrap: wrap; max-width: 100%; }
+  .hx-reference select { max-width: 100%; }
+  .hx-cell-sheet { overflow-wrap: anywhere; }
+  .hx-sheet-numbers { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}

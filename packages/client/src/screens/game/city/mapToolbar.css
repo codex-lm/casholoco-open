@@ -1,0 +1,100 @@
+/* Hex board tools. Below 1200 px: one wrapping row of controls, each menu a small non-modal panel under its button;
+   wider, the left column at the end of this file. */
+.map-workspace-toolbar-row .map-product-picker select { max-width: 240px; }
+.hx-toolbar-colors { gap: 4px; }
+.hx-toolbar-colors > span:first-child { margin-right: 3px; }
+.hx-toolbar-colors .hx-lens { padding: 4px 8px; }
+.hx-scale { display: inline-flex; align-items: center; gap: 2px; margin-left: 8px; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hx-scale-end { padding-inline: 4px; }
+.hx-scale-band { display: inline-block; width: 16px; height: 14px; opacity: .8; border: 1px solid #5b544a40; }
+.hx-toolbar-colors .hx-lens-note { display: inline; margin: 0 0 0 8px; }
+.map-company-header.hx-toolbar-company { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; font-size: 13px; }
+.hx-toolbar-company strong { font-variant-numeric: tabular-nums; }
+
+.map-menu { position: relative; font-family: var(--sans); }
+.map-menu-button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.map-menu-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  /* Above the board and its sheet, under the sticky game bar (z-index 50): a menu left open slides under it on scroll. */
+  z-index: 40;
+  width: max-content;
+  min-width: 240px;
+  max-width: min(440px, calc(100vw - 32px));
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.map-menu-panel-end { left: auto; right: 0; }
+.map-menu-panel:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.map-menu-panel > * + * { margin-top: 8px; }
+.map-menu-panel .map-flow-modes { display: flex; flex-wrap: wrap; gap: 5px; }
+.map-menu-panel .map-flow-options { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.map-menu-panel .map-flow-hint, .map-menu-panel .map-comparison { margin-block: 8px 0; }
+.map-menu-panel .map-product-picker select { max-width: 280px; }
+.map-menu-section ul { list-style: none; margin: 0; padding: 0; }
+.map-menu-heading { margin: 0 0 3px; font-size: 11px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
+.map-menu-item { display: block; width: 100%; padding: 4px 6px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.map-menu-item:hover, .map-menu-item:focus-visible { background: var(--paper-2, #efe6d2); outline: none; }
+.hx-legend-menu .map-menu-panel .hx-legend { padding: 0; }
+
+/* Narrow windows: a menu opens across the whole toolbar width instead of overflowing from its button. */
+.map-workspace-toolbar-row { position: relative; }
+@media (max-width: 640px) {
+  .map-workspace-toolbar-row .map-menu { position: static; }
+  .map-workspace-toolbar-row .map-menu-panel { left: 0; right: 0; width: auto; min-width: 0; max-width: none; }
+}
+
+/* The board's hot tip (the classic map's « Occasion » sign): one line and its button, after the menus. Short of room
+   it shrinks (down to 180 px) rather than wrapping the toolbar: the sector and place get an ellipsis, never the payback
+   or the button; it never grows past its own text. */
+.map-opening-chip { display: inline-flex; flex: 1 1 0; align-items: center; gap: 6px; min-width: min(180px, 100%); max-width: max-content; padding: 2px 4px 2px 10px; border: 1px solid var(--hair); border-radius: 999px; background: var(--card); font-family: var(--sans); font-size: 13px; }
+.map-opening-text { min-width: 0; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.map-opening-payback { flex: none; white-space: nowrap; }
+.map-opening-chip .btn { flex: none; }
+
+/* Wide desktops (≥ 1200 px): the left column (HexSidePanel, laid out in hexSide.css) keeps these tools at its foot
+   and in folds. The column is a size container (`side`): the lenses go on one row from 300 px. */
+.hx-side .hx-toolbar-company { display: flex; }
+.hx-side .map-product-picker { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.hx-side .map-product-picker select { flex: 1 1 auto; width: auto; min-width: 0; max-width: none; min-height: 30px; padding-block: 4px; }
+/* « Couleurs » : the label, the four buttons on one row (fewer per row if the column were narrower than 268 px), the
+   scale and the status; from 300 px, exactly four columns: the label and the scale share the first row and the four
+   buttons always sit on the second, so none moves when « Aucune » removes the scale. */
+.hx-side .hx-toolbar-colors { display: grid; grid-template-columns: repeat(auto-fit, minmax(64px, 1fr)); gap: 4px; }
+.hx-side .hx-toolbar-colors > span:first-child,
+.hx-side .hx-toolbar-colors .hx-scale,
+.hx-side .hx-toolbar-colors .hx-lens-note { grid-column: 1 / -1; margin: 0; }
+.hx-side .hx-toolbar-colors .hx-scale { justify-content: flex-start; }
+.hx-side .hx-toolbar-colors .hx-lens-note { display: block; }
+@container side (min-width: 300px) {
+  .hx-side .hx-toolbar-colors { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hx-side .hx-toolbar-colors .hx-lens { grid-row: 2; }
+  .hx-side .hx-toolbar-colors > span:first-child { grid-row: 1; grid-column: 1 / 2; align-self: center; }
+  .hx-side .hx-toolbar-colors .hx-scale { grid-row: 1; grid-column: 2 / -1; justify-self: end; }
+}
+/* The hot tip wraps instead of being cut: the whole sentence fits in the column. */
+.hx-side .map-opening-chip { display: flex; flex: none; flex-wrap: wrap; max-width: none; min-width: 0; padding: 6px 8px 6px 10px; border-radius: 10px; }
+.hx-side .map-opening-text { max-width: none; white-space: normal; overflow: visible; }
+.hx-side-heading { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
+.hx-side .map-flow-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.hx-side .map-flow-options { flex-direction: column; align-items: flex-start; gap: 5px; margin-top: 8px; }
+.hx-side .map-flow-options label { white-space: normal; }
+.hx-side .map-compared-picker { margin-top: 8px; flex-wrap: wrap; white-space: normal; }
+.hx-side .map-comparison { margin-top: 6px; font-size: 12px; }
+.hx-side .map-flow-hint { margin-top: 8px; }
+.hx-side-fold > summary { cursor: pointer; padding: 2px 0; font-size: 11px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
+.hx-side-fold[open] > summary { margin-bottom: 4px; }
+.hx-legend-fold .hx-legend { padding: 4px 0 6px; }
+.hx-legend-fold .hx-keyboard-hint + .hx-keyboard-hint { margin-top: 4px; }
+.iso-legend .hx-legend-step > i { clip-path: none; border-radius: 2px; }
+.iso-legend-marks { display: grid; gap: 6px; }
+.iso-legend-marks > span > i { width: 13px; height: 13px; flex: 0 0 13px; border: 2px solid; }
+.iso-legend-ownership { margin: 9px 0 6px; }

@@ -1,0 +1,83 @@
+/* Keep the newspaper headings; give controls and decision data their own quiet hierarchy. */
+.company-view-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px double var(--hair);
+}
+.company-view-nav .tabs {
+  display: flex;
+  padding: 0;
+  border: 1px solid var(--hair);
+  background: var(--card);
+}
+.company-view-nav .tab {
+  min-width: 120px;
+  min-height: 40px;
+  padding: 8px 18px;
+  font-family: var(--sans);
+  font-size: .85rem;
+}
+.company-view-nav .tab.active {
+  background: var(--ink);
+  color: var(--card);
+}
+.company-view-hint {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: .82rem;
+}
+.game .tab:focus-visible {
+  outline: 3px solid var(--better);
+  outline-offset: -4px;
+}
+.game .btn:not(.tiny) { min-height: 34px; }
+.modal-head .btn-icon { min-width: 36px; min-height: 36px; flex-shrink: 0; }
+.game input:not([type='range']):not([type='checkbox']),
+.game select,
+.modal input:not([type='range']):not([type='checkbox']),
+.modal select { font-variant-numeric: tabular-nums; }
+.game .stat-value, .game table, .modal table { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 700px) {
+  /* One visible row, with horizontal scrolling, instead of five rows before the content. */
+  .game > .tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 4px 10px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  .game > .tabs .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    min-height: 44px;
+  }
+  .game > .tabs .tab.active { border-bottom-color: var(--ink); }
+  .company-view-nav { gap: 8px; margin-bottom: 14px; }
+  .company-view-nav .tabs { width: 100%; }
+  .company-view-nav .tab { flex: 1; }
+  .topbar-fortune { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .topbar-fortune:has(.topbar-debt) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .topbar-fortune dt {
+    font-size: .65rem;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .modal-backdrop { padding: 12px 10px; }
+  .modal-head { padding: 8px 12px; }
+  .modal-body { padding: 12px; }
+}
+@media (pointer: coarse) {
+  .game .btn:not(.tiny), .modal .btn:not(.tiny), .modal-head .btn-icon { min-height: 44px; }
+}

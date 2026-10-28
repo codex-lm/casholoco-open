@@ -1,0 +1,158 @@
+/* Shared frame: the existing single-column/small-screen map behaviour stays available. */
+.map-workspace-toolbar { margin-bottom: 12px; }
+.map-workspace-view { display: flex; justify-content: flex-end; margin-bottom: 6px; }
+.map-workspace-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
+.map-workspace-column { min-width: 0; }
+.map-workspace-sheet { min-width: 0; }
+.map-workspace-sheet-bar { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+.map-workspace-sheet-content[hidden] { display: none; }
+.map-workspace-sheet-folded .map-workspace-sheet-bar { margin-bottom: 0; }
+.map-company-header { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-bottom: 8px; font-size: 13px; }
+.map-company-header strong { font-variant-numeric: tabular-nums; }
+.map-product-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-bottom: 10px; font-size: 13px; }
+.map-product-picker { display: inline-flex; align-items: center; gap: 8px; }
+.map-product-picker select { max-width: 300px; min-height: 32px; font: inherit; }
+.map-compare-toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.map-compare-toggle input { width: 14px; height: 14px; margin: 0; accent-color: var(--ink); }
+.map-comparison { flex-basis: 100%; margin: 0; color: var(--muted); }
+.map-workspace-toolbar .map-legend { margin-block: 8px 0; }
+/* Hex board below 1200 px: a single wrapping row above the board. */
+.map-workspace-toolbar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; font-size: 13px; }
+
+/* Hex board frame (MapZoomFrame): one border around the drawing; small screens keep the page-wide board, no zoom. */
+.map-zoom { position: relative; border: 1px solid var(--ink); }
+.map-zoom .hx-map { border: 0; }
+.map-zoom-controls { display: none; }
+
+.island-loading { display: grid; place-items: center; min-height: 480px; background: #d4e8e6; color: #273a3b; }
+@media (min-width: 960px) {
+  .map-workspace-isometric .map-workspace-column { min-width: 0; }
+  .map-workspace-isometric .iso-stage { height: clamp(360px, calc(100dvh - var(--island-stage-top, 320px) - 140px), 740px); min-height: 360px; }
+}
+
+@media (min-width: 960px) {
+  .page.tab-page:has(.map-workspace) { max-width: none; }
+  .map-workspace { --map-chrome-h: 180px; scroll-margin-top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px); }
+  .map-workspace-selected .map-workspace-grid { grid-template-columns: minmax(0, 1fr) 330px; }
+  .map-workspace-selected.map-workspace-folded .map-workspace-grid { grid-template-columns: minmax(0, 1fr) 38px; }
+  .map-workspace-column .map-frame,
+  .map-workspace-column .hx-map { width: 100%; max-width: none; margin-inline: 0; }
+  /* Par défaut la carte prend toute la largeur à ses proportions (la page défile) ; « Voir tout le pays » la fait
+     tenir dans la hauteur de la fenêtre. */
+  .map-workspace .map-workspace-column .map-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  .map-workspace.map-workspace-whole .map-workspace-column .map-svg {
+    height: max(120px, calc(var(--map-viewport-h, 100dvh) - var(--topbar-h, 65px) - var(--tabs-h, 0px) - var(--map-chrome-h) - 24px));
+    object-fit: contain;
+  }
+  .map-workspace-sheet {
+    position: sticky;
+    top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px);
+    max-height: calc(var(--map-viewport-h, 100dvh) - var(--topbar-h, 65px) - var(--tabs-h, 0px) - 24px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+  .map-workspace-sheet-folded { overflow: visible; scrollbar-gutter: auto; }
+  .map-workspace-sheet-folded .map-workspace-sheet-bar { justify-content: center; }
+  .map-workspace-sheet-folded .map-workspace-fold {
+    writing-mode: vertical-rl;
+    padding: 10px 7px;
+    min-height: 120px;
+  }
+
+  /* Plateau : un cadre à ses proportions, haut de la fenêtre sous les barres collées moins ce qui le précède (la barre
+     d'une ligne sous 1200 px, rien en trois colonnes) ; au zoom 1 le pays y tient en entier, sans défiler la page. */
+  .map-workspace-zoomable {
+    --map-chrome-h: 0px;
+    --map-frame-h: max(280px, calc(var(--map-viewport-h, 100dvh) - var(--topbar-h, 65px) - var(--tabs-h, 0px) - var(--map-chrome-h) - 24px));
+    --map-fit-w: calc(var(--map-frame-h) * var(--map-aspect, 0.864) + 2px);
+  }
+  /* Le cadre a la largeur qui fait tenir le pays dans la hauteur, à tout zoom : zoomer ne déplace ni ne redimensionne
+     rien autour (le dessin grandit dans le cadre, qui défile). Seule la colonne de gauche repliée (au-delà de 1, plus
+     bas) lui donne la largeur du pays ajusté × zoom (`frameWidth` dans mapZoom.ts). La colonne est un conteneur : si
+     elle est plus étroite que le pays ajusté, le cadre (et le pays au zoom 1) rétrécit à sa largeur. */
+  .map-workspace-zoomable .map-workspace-column { container: map-column / inline-size; }
+  .map-workspace-zoomable .map-zoom { max-width: var(--map-fit-w); margin-inline: auto; }
+  .map-zoom-frame {
+    --map-frame-inner-h: min(var(--map-frame-h, 100vh), calc((100cqw - 2px) / var(--map-aspect, 0.864)));
+    height: var(--map-frame-inner-h);
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .map-zoom-board { width: calc(var(--map-frame-inner-h) * var(--map-aspect, 0.864) * var(--map-zoom, 1)); }
+  /* Au-delà de 1, le dessin grandit et le cadre défile dans les deux sens ; on le déplace en glissant. */
+  .map-zoom-in .map-zoom-frame { overflow: auto; cursor: grab; }
+  .map-zoom-dragging .map-zoom-frame,
+  .map-zoom-dragging .map-zoom-frame .hx-cell { cursor: grabbing; }
+  .map-zoom-controls {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: calc(8px + var(--map-zoom-scrollbar, 0px));
+    z-index: 2;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  .map-zoom-controls .btn { background: var(--card); box-shadow: 1px 1px 0 var(--ink); }
+  /* Plus précis que `.btn.tiny` et `.btn[aria-disabled]` (styles.css) : « + » et « − » gardent leur grand glyphe. */
+  .map-zoom-controls .btn.map-zoom-button { width: 30px; height: 30px; padding: 0; font-size: 18px; line-height: 1; }
+  .map-zoom-controls .btn.map-zoom-button[aria-disabled='true'] { opacity: 0.4; cursor: not-allowed; }
+  .map-zoom-controls .map-zoom-button[aria-disabled='true']:hover { background: var(--card); color: inherit; }
+}
+
+/* Three columns on wide desktops: the left column (« Mes usines » and the board tools), the board fitted to the
+   screen, the sheet. The sheet is served first (360 to 520 px of what the board leaves), the left column takes the
+   rest (280 to 400 px); the three tracks are always laid out and centred, so nothing moves when the sheet folds,
+   when nothing is selected, or when the zoom changes. Zoomed in, the left column can fold to a 40 px strip: the
+   board's track then takes the fitted width × zoom (plus the frame's vertical scrollbar, so that a board that fits
+   never pans sideways), within what the strip and the sheet leave, and the columns are packed to the right: zooming
+   further moves neither the sheet nor the zoom buttons (at the frame's top right), only the strip. */
+@media (min-width: 1200px) {
+  .map-workspace-with-side {
+    --map-rest: calc(100% - var(--map-fit-w, 0px) - 40px);
+    --map-sheet-w: clamp(360px, calc(var(--map-rest) - 280px), 520px);
+    --map-side-w: clamp(280px, calc(var(--map-rest) - var(--map-sheet-w)), 400px);
+  }
+  .map-workspace-with-side .map-workspace-grid {
+    grid-template-columns: var(--map-side-w) minmax(0, var(--map-fit-w, 1fr)) var(--map-sheet-w);
+    justify-content: center;
+  }
+  .map-workspace-with-side.map-workspace-side-folded {
+    --map-side-w: 40px;
+    --map-board-w: calc((var(--map-fit-w) - 2px) * var(--map-zoom, 1) + 2px + var(--map-zoom-scrollbar, 0px));
+  }
+  .map-workspace-with-side.map-workspace-side-folded .map-workspace-grid {
+    grid-template-columns: var(--map-side-w) minmax(0, var(--map-board-w)) var(--map-sheet-w);
+    justify-content: end;
+  }
+  .map-workspace-zoomable.map-workspace-side-folded .map-zoom { max-width: var(--map-board-w); }
+  .map-workspace-with-side .map-workspace-sheet-folded { justify-self: start; }
+  .map-workspace-side {
+    min-width: 0;
+    position: sticky;
+    top: calc(var(--topbar-h, 65px) + var(--tabs-h, 0px) + 12px);
+    max-height: calc(var(--map-viewport-h, 100dvh) - var(--topbar-h, 65px) - var(--tabs-h, 0px) - 24px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .map-workspace-side-content[hidden] { display: none; }
+  /* « ‹ » (zoomed in only), at the top right of the column. */
+  .map-workspace-side .btn.map-workspace-side-fold { position: absolute; top: 0; right: 0; z-index: 2; padding: 0 9px; font-size: 16px; line-height: 1.3; background: var(--paper); }
+  /* Folded: one vertical button, then a minimal key of the colours (the reference's emoji, the lens, its bands). */
+  .map-workspace-side-strip { display: flex; flex-direction: column; align-items: center; gap: 10px; overflow: visible; }
+  .map-workspace-side-reopen { writing-mode: vertical-rl; padding: 10px 7px; min-height: 120px; }
+  .map-side-strip { writing-mode: vertical-rl; display: flex; align-items: center; gap: 6px; margin: 0; font-family: var(--sans); font-size: 12px; color: var(--ink-2); }
+  .map-side-strip-bands { display: flex; gap: 1px; }
+  .map-side-strip-bands i { display: block; width: 14px; height: 12px; opacity: .8; border: 1px solid #5b544a40; }
+  .map-workspace-isometric.map-workspace-with-side { --map-side-w: 260px; --map-sheet-w: 300px; }
+  .map-workspace-isometric.map-workspace-folded { --map-sheet-w: 38px; }
+  .map-workspace-isometric.map-workspace-with-side .map-workspace-grid { grid-template-columns: var(--map-side-w) minmax(0, 1fr) var(--map-sheet-w); }
+  .map-workspace-isometric.map-workspace-with-side.map-workspace-side-folded .map-workspace-grid { grid-template-columns: 40px minmax(0, 1fr) var(--map-sheet-w); }
+}

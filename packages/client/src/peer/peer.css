@@ -1,0 +1,42 @@
+.peer-home .masthead-top { align-items: center; }
+.peer-stamp { display: inline-block; margin-left: .12em; font-family: var(--sans); font-weight: 700; font-size: .18em; letter-spacing: .03em; text-transform: uppercase; transform: rotate(-7deg); vertical-align: middle; border: 2px solid currentColor; padding: .18em .3em; }
+.peer-intro { max-width: 700px; margin: 0 auto 20px; text-align: center; }
+.peer-limits { max-width: 760px; margin: 0 auto 26px; padding: 15px 18px; border-left: 4px solid var(--warn); background: var(--paper-2); }
+.peer-limits h2 { font-size: 1.1rem; }
+.peer-limits p { font-size: .92rem; }
+.peer-limits p:last-child { margin-bottom: 0; }
+.peer-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 760px; margin: 0 auto 26px; }
+.peer-choice-grid .home-card { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.peer-choice-grid h2, .peer-choice-grid p { margin-bottom: 0; }
+.peer-choice-grid .btn { margin-top: auto; white-space: normal; }
+.peer-setup > .field { margin: 16px 0; }
+.peer-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin: 16px 0; }
+.peer-fields .field, .peer-code-output, .peer-home .field { min-width: 0; }
+.peer-home input, .peer-home select { width: 100%; min-width: 0; }
+.peer-home select { padding: 9px 10px; background: var(--card); border: 1px solid var(--hair); border-radius: 2px; }
+.peer-home textarea { width: 100%; padding: 10px; resize: vertical; background: var(--paper); border: 1px solid var(--hair); color: var(--ink); font: .78rem/1.5 monospace; overflow-wrap: anywhere; }
+.peer-home label.field { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; }
+.peer-code-output .btn { margin-bottom: 12px; }
+.peer-invite-block { border-top: 1px solid var(--hair); padding-top: 18px; margin: 18px 0; }
+.peer-members { margin: 18px 0; }
+.peer-members ul { list-style: none; padding: 0; margin: 8px 0; }
+.peer-members li { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 9px 0; border-bottom: 1px solid var(--hair); }
+.peer-status { margin-left: auto; font-family: var(--sans); font-size: .75rem; color: var(--muted); }
+.peer-status.connected { color: var(--up); }
+.peer-start { border-top: 2px solid var(--ink); margin-top: 18px; padding-top: 18px; }
+.peer-start p { margin-top: 8px; }
+.peer-manual { max-width: 760px; margin: 24px auto; }
+.peer-manual h2 { font-size: 1.2rem; }
+.peer-manual ol { padding-left: 1.3em; }
+.peer-manual li { margin: 6px 0; }
+.peer-guest h3 { margin-top: 18px; }
+.peer-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 7px var(--gutter); background: var(--paper-2); border-bottom: 1px solid var(--hair); font-family: var(--sans); font-size: .75rem; }
+.peer-toolbar > button { margin-left: auto; }
+.peer-connection-lost { color: var(--down); }
+@media (max-width: 600px) {
+  .peer-choice-grid, .peer-fields { grid-template-columns: 1fr; }
+  .peer-home .logo { font-size: clamp(2.4rem, 12vw, 4.5rem); }
+  .peer-toolbar > span { flex: 1 1 100%; order: 3; }
+  .peer-home .row.between { align-items: flex-start; flex-wrap: wrap; }
+  .peer-home .btn.big { white-space: normal; }
+}
