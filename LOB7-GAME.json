@@ -2,6 +2,7 @@
   "title": "Casholoco Solo",
   "description": "Run a listed company, invest, negotiate and outsmart up to six rival CEOs. A complete single-player economic strategy game with classic, hexagonal and 3D island boards. French and English; no game server, no timer.",
   "entrypoint": "index.html",
+  "cover": "assets/casholoco-island-cover.jpg",
   "license": "MIT",
   "genre": [
     "Strategy",
